@@ -7,7 +7,6 @@
         public string UserId { get; set; }
         public string CommentText { get; set; }
         public string Sentiment { get; set; }
-        public float? Rating { get; set; }
         public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     }
 }

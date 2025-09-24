@@ -1,6 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using SentimentApi.Models;
-using System.Collections.Generic;
 
 namespace SentimentApi.Data
 {
@@ -9,5 +8,12 @@ namespace SentimentApi.Data
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options) { }
 
         public DbSet<Comment> Comments { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<Comment>().ToTable("Comments");
+        }
     }
 }

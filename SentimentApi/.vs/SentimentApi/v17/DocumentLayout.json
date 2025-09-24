@@ -3,8 +3,8 @@
   "WorkspaceRootPath": "D:\\WORK Projects\\Avances\\comments-sentiment-api\\SentimentApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3D168528-01CC-42AD-840B-8FC5A14C64A3}|SentimentApi.csproj|d:\\work projects\\avances\\comments-sentiment-api\\sentimentapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D168528-01CC-42AD-840B-8FC5A14C64A3}|SentimentApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3D168528-01CC-42AD-840B-8FC5A14C64A3}|SentimentApi.csproj|d:\\work projects\\avances\\comments-sentiment-api\\sentimentapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{3D168528-01CC-42AD-840B-8FC5A14C64A3}|SentimentApi.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3D168528-01CC-42AD-840B-8FC5A14C64A3}|SentimentApi.csproj|d:\\work projects\\avances\\comments-sentiment-api\\sentimentapi\\models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -13,6 +13,14 @@
     {
       "AbsoluteMoniker": "D:0:0:{3D168528-01CC-42AD-840B-8FC5A14C64A3}|SentimentApi.csproj|d:\\work projects\\avances\\comments-sentiment-api\\sentimentapi\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3D168528-01CC-42AD-840B-8FC5A14C64A3}|SentimentApi.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D168528-01CC-42AD-840B-8FC5A14C64A3}|SentimentApi.csproj|d:\\work projects\\avances\\comments-sentiment-api\\sentimentapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D168528-01CC-42AD-840B-8FC5A14C64A3}|SentimentApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D168528-01CC-42AD-840B-8FC5A14C64A3}|SentimentApi.csproj|d:\\work projects\\avances\\comments-sentiment-api\\sentimentapi\\controllers\\commentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D168528-01CC-42AD-840B-8FC5A14C64A3}|SentimentApi.csproj|solutionrelative:controllers\\commentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,18 +29,31 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 292,
-          "SelectedChildIndex": 0,
+          "DockedHeight": 242,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 4,
+              "Title": "CommentsController.cs",
+              "DocumentMoniker": "D:\\WORK Projects\\Avances\\comments-sentiment-api\\SentimentApi\\Controllers\\CommentsController.cs",
+              "RelativeDocumentMoniker": "Controllers\\CommentsController.cs",
+              "ToolTip": "D:\\WORK Projects\\Avances\\comments-sentiment-api\\SentimentApi\\Controllers\\CommentsController.cs",
+              "RelativeToolTip": "Controllers\\CommentsController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAUwBoAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-24T03:59:04.128Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "Program.cs",
               "DocumentMoniker": "D:\\WORK Projects\\Avances\\comments-sentiment-api\\SentimentApi\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
               "ToolTip": "D:\\WORK Projects\\Avances\\comments-sentiment-api\\SentimentApi\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAAABsAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-24T02:07:42.754Z",
               "EditorCaption": ""
@@ -45,7 +66,7 @@
               "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
               "ToolTip": "D:\\WORK Projects\\Avances\\comments-sentiment-api\\SentimentApi\\Data\\AppDbContext.cs",
               "RelativeToolTip": "Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-24T01:51:21.173Z",
               "EditorCaption": ""
@@ -58,15 +79,28 @@
               "RelativeDocumentMoniker": "Models\\Comment.cs",
               "ToolTip": "D:\\WORK Projects\\Avances\\comments-sentiment-api\\SentimentApi\\Models\\Comment.cs",
               "RelativeToolTip": "Models\\Comment.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-24T01:51:11.496Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\WORK Projects\\Avances\\comments-sentiment-api\\SentimentApi\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\WORK Projects\\Avances\\comments-sentiment-api\\SentimentApi\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-24T02:45:15.466Z",
               "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedHeight": 108,
+          "DockedHeight": 158,
           "SelectedChildIndex": -1,
           "Children": [
             {
