@@ -7,6 +7,24 @@
 ##
 ## Get latest from https://github.com/github/gitignore/blob/main/Dotnet.gitignore
 
+# Visual Studio
+.vs/
+SentimentApi/.vs/
+*.user
+*.suo
+
+# Build
+bin/
+obj/
+SentimentApi/bin/
+SentimentApi/obj/
+*.exe
+*.dll
+*.pdb
+
+# Otros
+*.log
+
 # Build results
 [Dd]ebug/
 [Dd]ebugPublic/
