@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using SentimentApi.Dtos;
+using SentimentApi.Services;
 
 namespace SentimentApi.Controllers
 {
@@ -136,5 +137,44 @@ namespace SentimentApi.Controllers
                 sentiment_counts = sentimentDict
             });
         }
+
+        // POST /api/comments/ai
+        [HttpPost("ai")]
+        public async Task<ActionResult<Comment>> CreateCommentWithAi(
+            [FromBody] CommentCreateDto dto,
+            [FromServices] AiService aiService)
+        {
+            var comment = new Comment
+            {
+                ProductId = dto.ProductId,
+                UserId = dto.UserId,
+                CommentText = dto.CommentText,
+                CreatedAt = DateTime.UtcNow
+            };
+
+            comment.Sentiment = await aiService.AnalyzeSentimentAsync(dto.CommentText);
+
+            _context.Comments.Add(comment);
+            await _context.SaveChangesAsync();
+
+            return CreatedAtAction(nameof(GetCommentById), new { id = comment.Id }, comment);
+        }
+
+        // GET /api/comments/{productId}/ai-summary
+        [HttpGet("{productId}/ai-summary")]
+        public async Task<ActionResult<string>> GetAiProductSummary(string productId, [FromServices] AiService aiService)
+        {
+            try
+            {
+                var summary = await aiService.SummarizeProductCommentsAsync(productId);
+                return Ok(new { productId, summary });
+            }
+            catch (Exception ex)
+            {
+                return StatusCode(500, $"Error al generar el resumen AI: {ex.Message}");
+            }
+        }
+
+
     }
 }
