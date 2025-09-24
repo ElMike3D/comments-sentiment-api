@@ -10,13 +10,21 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+var connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION")
+                       ?? builder.Configuration.GetConnectionString("Default");
+
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseSqlServer(connectionString));
+
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
 
 var geminiApiKey = Environment.GetEnvironmentVariable("GEMINI_API_KEY")
-                   ?? builder.Configuration["Gemini:ApiKey"];
+                   ?? builder.Configuration["Gemini:ApiKey"]
+                   ?? throw new InvalidOperationException("Gemini API key is not configured.");
 
 builder.Services.AddScoped<AiService>(sp => new AiService(geminiApiKey, sp.GetRequiredService<AppDbContext>()));
+
 
 var app = builder.Build();
 

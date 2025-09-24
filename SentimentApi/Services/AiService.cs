@@ -13,10 +13,11 @@ namespace SentimentApi.Services
 
         public AiService(string apiKey, AppDbContext context)
         {
-            var googleAI = new GoogleAi(apiKey);
+            if (string.IsNullOrWhiteSpace(apiKey))
+                throw new ArgumentNullException(nameof(apiKey), "La API key de Gemini no puede ser null.");
 
-            _model = googleAI.CreateGenerativeModel("models/gemini-1.5-flash");
-            _context = context;
+            _model = new GoogleAi(apiKey).CreateGenerativeModel("models/gemini-1.5-flash");
+            _context = context ?? throw new ArgumentNullException(nameof(context));
         }
 
         public async Task<string> AnalyzeSentimentAsync(string text)
