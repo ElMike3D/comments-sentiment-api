@@ -40,10 +40,7 @@ sqlcmd -S localhost -d master -i "db-init\init.sql" -E
 
 Edita `appsettings.json` en `SentimentApi/`:
 
-- `ConnectionStrings:Default`: cadena de conexión de SQL Server.
 - `Gemini:ApiKey`: reemplaza el valor por tu clave de API de Gemini.
-
-La aplicación no usará `.env`; la clave debe estar definida en `appsettings.json`.
 
 ---
 
@@ -61,7 +58,7 @@ dotnet restore
 dotnet run
 ```
 
-Por defecto, la API correrá en `https://localhost:7015` y `http://localhost:5019`. Documentación en `/swagger`.
+Por defecto, la API correrá en `https://localhost:7015` y `http://localhost:5019`.
 
 ---
 
