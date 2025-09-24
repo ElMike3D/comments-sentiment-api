@@ -7,7 +7,7 @@ API para gestionar comentarios de productos y analizar su sentimiento de manera 
 ## 1) Clonar el repositorio
 
 ```bash
-git clone <URL_DEL_REPOSITORIO>
+git clone https://github.com/ElMike3D/comments-sentiment-api.git
 cd comments-sentiment-api/SentimentApi
 ```
 
