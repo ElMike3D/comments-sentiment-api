@@ -5,26 +5,31 @@ using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 
-builder.Services.AddControllers();
+// Configurar Kestrel para escuchar en todas las interfaces y puerto configurable
+var port = Environment.GetEnvironmentVariable("PORT") ?? "5019";
+builder.WebHost.ConfigureKestrel(options =>
+{
+    options.ListenAnyIP(int.Parse(port));
+});
 
+builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
+// Connection string
 var connectionString = Environment.GetEnvironmentVariable("DB_CONNECTION")
-                       ?? builder.Configuration.GetConnectionString("Default");
+                       ?? builder.Configuration.GetConnectionString("Default")
+                       ?? throw new InvalidOperationException("Database connection string not configured.");
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString));
 
-builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlServer(builder.Configuration.GetConnectionString("Default")));
-
+// Gemini API key
 var geminiApiKey = Environment.GetEnvironmentVariable("GEMINI_API_KEY")
                    ?? builder.Configuration["Gemini:ApiKey"]
                    ?? throw new InvalidOperationException("Gemini API key is not configured.");
 
 builder.Services.AddScoped<AiService>(sp => new AiService(geminiApiKey, sp.GetRequiredService<AppDbContext>()));
-
 
 var app = builder.Build();
 

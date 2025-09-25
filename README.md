@@ -3,84 +3,116 @@
 API para gestionar comentarios de productos y analizar su sentimiento de manera automática.
 
 ---
+## Opción 1: Ejecución con Docker
 
-## 1) Clonar el repositorio
+### 1) Clonar el repositorio
+
+```bash
+git clone https://github.com/ElMike3D/comments-sentiment-api.git
+cd comments-sentiment-api
+```
+
+### 2) Requisitos
+
+* [Docker Desktop](https://www.docker.com/products/docker-desktop)
+* Docker Compose
+
+### 3) Configurar variables de entorno
+
+Crea un archivo `.env` en la raíz del repositorio con:
+
+```
+DB_CONNECTION=Server=sentiment-sqlserver,1433;Database=SentimentDb;User Id=test_admin;Password=Password123!;TrustServerCertificate=True;
+GEMINI_API_KEY=TU_API_KEY
+```
+
+### 4) Levantar los contenedores
+
+```bash
+docker compose up --build
+```
+
+* Esto levantará:
+
+  * SQL Server con base `SentimentDb` inicializada
+  * API `SentimentApi` escuchando en `http://localhost:5000`
+
+### 5) Acceder a la API
+
+* HTTP: `http://localhost:5000`
+* Swagger UI: `http://localhost:5000/swagger`
+
+### 6) Notas
+
+* La db y los datos iniciales de prueba se cargan automáticamente gracias al contenedor `db-init`.
+* Si quieres reiniciar todo, elimina el volumen de SQL Server:
+
+```bash
+docker volume rm comments-sentiment-api_sqlserver-data
+```
+
+## Opción 2: Ejecución Local (sin Docker)
+
+### 1) Clonar el repositorio
 
 ```bash
 git clone https://github.com/ElMike3D/comments-sentiment-api.git
 cd comments-sentiment-api/SentimentApi
 ```
 
----
+### 2) Requisitos
 
-## 2) Requisitos
+* [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
+* SQL Server accesible desde tu equipo
 
-- [.NET 8 SDK](https://dotnet.microsoft.com/en-us/download/dotnet/8.0)
-- SQL Server (local o remoto) accesible desde tu equipo
+### 3) Inicializar la base de datos
 
----
+* Ejecuta el script `db-init/init.sql`:
 
-## 3) Inicializar la base de datos
-
-- Antes de ejecutar la API, crea la base y tablas ejecutando el script `db-init/init.sql` en tu servidor de SQL Server.
-
-  - Con SQL Server Management Studio (SSMS): abre `db-init/init.sql` y ejecútalo.
-  - Con `sqlcmd` (Windows):
+  * Con **SQL Server Management Studio (SSMS)**: abre y ejecuta el archivo.
+  * Con **sqlcmd** (Windows):
 
 ```bash
-# Desde la raíz del repositorio
 sqlcmd -S localhost -d master -i "db-init\init.sql" -E
 ```
 
-- La base creada es `SentimentDb` e incluye la tabla `Comments`.
+* La base creada es `SentimentDb` e incluye la tabla `Comments` con datos de prueba insertados.
 
----
+### 4) Configurar conexión y API Key
 
-## 4) Configurar conexión y API key
+Crea un archivo `.env` en `SentimentApi/` con:
 
-Edita `appsettings.json` en `SentimentApi/`:
+```
+DB_CONNECTION=Server=localhost;Database=SentimentDb;User Id=test_admin;Password=Password123;TrustServerCertificate=True;
+GEMINI_API_KEY=TU_API_KEY
+PORT=5019
+```
 
-- `Gemini:ApiKey`: reemplaza el valor por tu clave de API de Gemini.
-
----
-
-## 5) Construir y ejecutar la aplicación
-
-1. Restaurar paquetes:
+### 5) Construir y ejecutar la aplicación
 
 ```bash
 dotnet restore
-```
-
-2. Ejecutar la aplicación:
-
-```bash
 dotnet run
 ```
 
-3. **Acceder a la API:**
-   - La aplicación estará disponible en:
-     - HTTP: `http://localhost:5019`
-     - HTTPS: `https://localhost:7015`
-   - **Swagger UI** (interfaz para probar endpoints): `http://localhost:5019/swagger`
+### 6) Acceder a la API
 
-4. **Pruebas rápidas:**
+* HTTP: `http://localhost:5019`
+* HTTPS: `https://localhost:7015`
+* Swagger UI: `http://localhost:5019/swagger`
 
-   **Verificar conexión a base de datos:**
-   ```bash
-   curl http://localhost:5019/api/comments/ping
-   ```
-   O abre en tu navegador: `http://localhost:5019/api/comments/ping`
-   
-   **Obtener todos los comentarios:**
-   ```bash
-   curl http://localhost:5019/api/comments
-   ```
-   O abre en tu navegador: `http://localhost:5019/api/comments`
+### 7) Pruebas rápidas
 
-5. **Para desarrollo:** Te recomendamos usar Swagger UI en `http://localhost:5019/swagger` ya que permite probar todos los endpoints de forma interactiva sin necesidad de curl o herramientas externas.
+```bash
+# Verificar conexión a la base de datos
+curl http://localhost:5019/api/comments/ping
+
+# Obtener todos los comentarios
+curl http://localhost:5019/api/comments
+```
 
 ---
+
 
 ## Troubleshooting
 
@@ -108,7 +140,6 @@ Si obtienes errores de conexión a la base de datos como:
 
 - **Puerto HTTPS no disponible:** Si ves `Failed to determine the https port for redirect`, usa solo HTTP: `http://localhost:5019`
 - **Base de datos no existe:** Asegúrate de haber ejecutado el script `db-init/init.sql`
-- **API Key de Gemini:** Si usas endpoints de AI, verifica que `Gemini:ApiKey` esté configurado en `appsettings.json`
 
 ## Base de datos (referencia rápida)
 

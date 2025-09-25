@@ -3,24 +3,20 @@
   "WorkspaceRootPath": "D:\\WORK Projects\\Avances\\comments-sentiment-api\\SentimentApi\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3D168528-01CC-42AD-840B-8FC5A14C64A3}|SentimentApi.csproj|d:\\work projects\\avances\\comments-sentiment-api\\sentimentapi\\controllers\\commentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D168528-01CC-42AD-840B-8FC5A14C64A3}|SentimentApi.csproj|solutionrelative:controllers\\commentscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D168528-01CC-42AD-840B-8FC5A14C64A3}|SentimentApi.csproj|d:\\work projects\\avances\\comments-sentiment-api\\sentimentapi\\services\\aiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D168528-01CC-42AD-840B-8FC5A14C64A3}|SentimentApi.csproj|solutionrelative:services\\aiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3D168528-01CC-42AD-840B-8FC5A14C64A3}|SentimentApi.csproj|d:\\work projects\\avances\\comments-sentiment-api\\sentimentapi\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D168528-01CC-42AD-840B-8FC5A14C64A3}|SentimentApi.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{3D168528-01CC-42AD-840B-8FC5A14C64A3}|SentimentApi.csproj|d:\\work projects\\avances\\comments-sentiment-api\\sentimentapi\\models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3D168528-01CC-42AD-840B-8FC5A14C64A3}|SentimentApi.csproj|solutionrelative:models\\comment.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3D168528-01CC-42AD-840B-8FC5A14C64A3}|SentimentApi.csproj|d:\\work projects\\avances\\comments-sentiment-api\\sentimentapi\\dtos\\commentcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D168528-01CC-42AD-840B-8FC5A14C64A3}|SentimentApi.csproj|solutionrelative:dtos\\commentcreatedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3D168528-01CC-42AD-840B-8FC5A14C64A3}|SentimentApi.csproj|d:\\work projects\\avances\\comments-sentiment-api\\sentimentapi\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{3D168528-01CC-42AD-840B-8FC5A14C64A3}|SentimentApi.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{3D168528-01CC-42AD-840B-8FC5A14C64A3}|SentimentApi.csproj|d:\\work projects\\avances\\comments-sentiment-api\\sentimentapi\\.env||{8B382828-6202-11D1-8870-0000F87579D2}",
+      "RelativeMoniker": "D:0:0:{3D168528-01CC-42AD-840B-8FC5A14C64A3}|SentimentApi.csproj|solutionrelative:.env||{8B382828-6202-11D1-8870-0000F87579D2}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,11 +26,50 @@
       "DocumentGroups": [
         {
           "DockedHeight": 323,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\WORK Projects\\Avances\\comments-sentiment-api\\SentimentApi\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "D:\\WORK Projects\\Avances\\comments-sentiment-api\\SentimentApi\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABcAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-25T04:26:59.096Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": ".env",
+              "DocumentMoniker": "D:\\WORK Projects\\Avances\\comments-sentiment-api\\SentimentApi\\.env",
+              "RelativeDocumentMoniker": ".env",
+              "ToolTip": "D:\\WORK Projects\\Avances\\comments-sentiment-api\\SentimentApi\\.env",
+              "RelativeToolTip": ".env",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
+              "WhenOpened": "2025-09-25T04:27:01.29Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\WORK Projects\\Avances\\comments-sentiment-api\\SentimentApi\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "D:\\WORK Projects\\Avances\\comments-sentiment-api\\SentimentApi\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-09-25T04:27:00.683Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "Comment.cs",
               "DocumentMoniker": "D:\\WORK Projects\\Avances\\comments-sentiment-api\\SentimentApi\\Models\\Comment.cs",
               "RelativeDocumentMoniker": "Models\\Comment.cs",
@@ -43,56 +78,6 @@
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-09-24T16:47:58.205Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "AiService.cs",
-              "DocumentMoniker": "D:\\WORK Projects\\Avances\\comments-sentiment-api\\SentimentApi\\Services\\AiService.cs",
-              "RelativeDocumentMoniker": "Services\\AiService.cs",
-              "ToolTip": "D:\\WORK Projects\\Avances\\comments-sentiment-api\\SentimentApi\\Services\\AiService.cs",
-              "RelativeToolTip": "Services\\AiService.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAgwEMAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T16:43:45.868Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "appsettings.json",
-              "DocumentMoniker": "D:\\WORK Projects\\Avances\\comments-sentiment-api\\SentimentApi\\appsettings.json",
-              "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "D:\\WORK Projects\\Avances\\comments-sentiment-api\\SentimentApi\\appsettings.json",
-              "RelativeToolTip": "appsettings.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-24T09:57:26.253Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CommentCreateDto.cs",
-              "DocumentMoniker": "D:\\WORK Projects\\Avances\\comments-sentiment-api\\SentimentApi\\Dtos\\CommentCreateDto.cs",
-              "RelativeDocumentMoniker": "Dtos\\CommentCreateDto.cs",
-              "ToolTip": "D:\\WORK Projects\\Avances\\comments-sentiment-api\\SentimentApi\\Dtos\\CommentCreateDto.cs",
-              "RelativeToolTip": "Dtos\\CommentCreateDto.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T16:43:00.31Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CommentsController.cs",
-              "DocumentMoniker": "D:\\WORK Projects\\Avances\\comments-sentiment-api\\SentimentApi\\Controllers\\CommentsController.cs",
-              "RelativeDocumentMoniker": "Controllers\\CommentsController.cs",
-              "ToolTip": "D:\\WORK Projects\\Avances\\comments-sentiment-api\\SentimentApi\\Controllers\\CommentsController.cs",
-              "RelativeToolTip": "Controllers\\CommentsController.cs",
-              "ViewState": "AgIAAI0AAAAAAAAAAAAwwLQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T16:47:11.841Z",
               "EditorCaption": ""
             }
           ]

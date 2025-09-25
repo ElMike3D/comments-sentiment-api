@@ -1,10 +1,12 @@
 -- Crear la base de datos
 CREATE DATABASE SentimentDb;
 GO
+
+-- Usar la base de datos
 USE SentimentDb;
 GO
 
--- Crear la tabla Comments
+-- Crear tabla Comments
 CREATE TABLE Comments (
     Id INT IDENTITY(1,1) PRIMARY KEY,
     ProductId NVARCHAR(50) NOT NULL,
@@ -16,7 +18,9 @@ CREATE TABLE Comments (
 GO
 
 -- Crear login y usuario
-CREATE LOGIN test_admin WITH PASSWORD = 'Password123';
+CREATE LOGIN test_admin WITH PASSWORD = 'Password123!';
+GO
+
 CREATE USER test_admin FOR LOGIN test_admin;
 ALTER ROLE db_owner ADD MEMBER test_admin;
 GO

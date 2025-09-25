@@ -1,5 +1,3 @@
-version: "3.9"
-
 services:
   sentiment-sqlserver:
     image: mcr.microsoft.com/mssql/server:2022-latest
@@ -7,15 +5,29 @@ services:
     ports:
       - "1433:1433"
     environment:
-      SA_PASSWORD: "Password123"
+      SA_PASSWORD: "Password123!"
       ACCEPT_EULA: "Y"
+      MSSQL_PID: "Express"
     volumes:
-      - ./db/init.sql:/docker-entrypoint-initdb.d/init.sql
+      - sqlserver-data:/var/opt/mssql
     healthcheck:
-      test: ["CMD-SHELL", "/opt/mssql-tools/bin/sqlcmd -S localhost -U sa -P Password123 -Q 'SELECT 1'"]
+      test: ["CMD-SHELL", "timeout 10s bash -c '</dev/tcp/localhost/1433' || exit 1"]
       interval: 10s
-      timeout: 5s
+      timeout: 10s
       retries: 10
+      start_period: 30s
+
+  db-init:
+    image: mcr.microsoft.com/mssql-tools:latest
+    depends_on:
+      sentiment-sqlserver:
+        condition: service_healthy
+    volumes:
+      - ./db-init:/db-init
+    entrypoint: >
+      /bin/bash -c "
+        /opt/mssql-tools/bin/sqlcmd -S sentiment-sqlserver -U sa -P Password123! -i /db-init/init.sql
+      "
 
   sentiment-api:
     build:
@@ -26,8 +38,12 @@ services:
       - "5000:80"
     environment:
       ASPNETCORE_ENVIRONMENT: Development
-      DB_CONNECTION: "Server=sentiment-sqlserver,1433;Database=SentimentDb;User Id=test_admin;Password=Password123;TrustServerCertificate=True"
+      DB_CONNECTION: "${DB_CONNECTION}"
       GEMINI_API_KEY: "${GEMINI_API_KEY}"
+      PORT: 80
     depends_on:
       sentiment-sqlserver:
         condition: service_healthy
+
+volumes:
+  sqlserver-data:
