@@ -78,16 +78,6 @@ dotnet run
    ```
    O abre en tu navegador: `http://localhost:5019/api/comments`
 
-   **Filtrar comentarios por producto:**
-   ```bash
-   curl "http://localhost:5019/api/comments?product_id=PROD001"
-   ```
-
-   **Obtener resumen de sentimientos:**
-   ```bash
-   curl http://localhost:5019/api/sentiment-summary
-   ```
-
 5. **Para desarrollo:** Te recomendamos usar Swagger UI en `http://localhost:5019/swagger` ya que permite probar todos los endpoints de forma interactiva sin necesidad de curl o herramientas externas.
 
 ---
