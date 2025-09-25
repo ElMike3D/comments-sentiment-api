@@ -58,9 +58,67 @@ dotnet restore
 dotnet run
 ```
 
-Por defecto, la API correrá en `https://localhost:7015` y `http://localhost:5019`.
+3. **Acceder a la API:**
+   - La aplicación estará disponible en:
+     - HTTP: `http://localhost:5019`
+     - HTTPS: `https://localhost:7015`
+   - **Swagger UI** (interfaz para probar endpoints): `http://localhost:5019/swagger`
+
+4. **Pruebas rápidas:**
+
+   **Verificar conexión a base de datos:**
+   ```bash
+   curl http://localhost:5019/api/comments/ping
+   ```
+   O abre en tu navegador: `http://localhost:5019/api/comments/ping`
+   
+   **Obtener todos los comentarios:**
+   ```bash
+   curl http://localhost:5019/api/comments
+   ```
+   O abre en tu navegador: `http://localhost:5019/api/comments`
+
+   **Filtrar comentarios por producto:**
+   ```bash
+   curl "http://localhost:5019/api/comments?product_id=PROD001"
+   ```
+
+   **Obtener resumen de sentimientos:**
+   ```bash
+   curl http://localhost:5019/api/sentiment-summary
+   ```
+
+5. **Para desarrollo:** Te recomendamos usar Swagger UI en `http://localhost:5019/swagger` ya que permite probar todos los endpoints de forma interactiva sin necesidad de curl o herramientas externas.
 
 ---
+
+## Troubleshooting
+
+### Error de conexión a SQL Server (Windows)
+
+Si obtienes errores de conexión a la base de datos como:
+- `Login failed for user`
+- `A network-related or instance-specific error occurred`
+
+**Problema común:** SQL Server en Windows puede tener configurado solo autenticación de Windows por defecto.
+
+**Solución:**
+1. Abre **SQL Server Management Studio (SSMS)** como administrador
+2. Conéctate a tu instancia de SQL Server
+3. Click derecho en el servidor → **Properties**
+4. Ve a **Security**
+5. En **Server authentication**, selecciona **SQL Server and Windows Authentication mode**
+6. Click **OK**
+7. **Reinicia el servicio de SQL Server:**
+   - Abre **Services** (`services.msc`)
+   - Busca tu instancia de SQL Server (ej: `SQL Server (MSSQLSERVER)`)
+   - Click derecho → **Restart**
+
+### Otros errores comunes
+
+- **Puerto HTTPS no disponible:** Si ves `Failed to determine the https port for redirect`, usa solo HTTP: `http://localhost:5019`
+- **Base de datos no existe:** Asegúrate de haber ejecutado el script `db-init/init.sql`
+- **API Key de Gemini:** Si usas endpoints de AI, verifica que `Gemini:ApiKey` esté configurado en `appsettings.json`
 
 ## Base de datos (referencia rápida)
 
