@@ -71,3 +71,13 @@ appsettings.Development.json
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+# Docker
+docker-compose.override.yml
+*.env
+**/docker-compose.override.yml
+**/*.env
+
+# Docker volumes / temporary files
+docker-data/
+docker-volumes/
